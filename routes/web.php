@@ -12,7 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //Key: url, Value: texto que queremos mostrar
+    $links = [
+        'https://platzi.com/laravel' => 'Curso de laravel',
+        'https://laravel.com' => 'Pagina de Laravel'
+    ];
+    return view('welcome', [
+        'teacher' => 'Walter Santiago',
+        'links'   => $links,
+    ]);
 });
 
 Route::get('acerca', function(){
