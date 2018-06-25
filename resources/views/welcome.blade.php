@@ -12,6 +12,14 @@
     </nav>
 </div>   
 <div class="row">
+    <form action="/messages/create" method="POST">
+        <div class="form-group">
+            {{ csrf_field() }}
+            <input type="text" name="message" id="form-control" placeholder="Qué estás pensando?">
+        </div>
+    </form>
+</div>
+<div class="row">
     {{-- Utilizamos @forelse y no @foreach para poder realizar alguna accion si la variable pasada por el forelse esta vacia, y en lugar de terminar en @endforeach, escribimos @empty, y luego terminamos o cerramos con @endforelse --}}
     @forelse($messages as $message)
         <div class="col-6">
