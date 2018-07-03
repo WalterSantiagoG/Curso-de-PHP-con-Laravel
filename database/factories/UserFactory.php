@@ -31,6 +31,8 @@ $factory->define(App\User::class, function (Faker $faker) {
 $factory->define(App\Message::class, function(Faker $faker){
     return [
         'content' => $faker->realText(random_int(20, 160)), //realTime recibe como parametro la cantidad de caracteres que quiere que contenga el parrafo, colocamos un numero randon en este caso entre 20 y 160
-        'image'   => $faker->imageUrl(600,338)
+        'image'   => $faker->imageUrl(600,338),
+        'created_at' => $faker->dateTimeThisDecade, 
+        'updated_at' => $faker->dateTimeThisDecade, 
     ];
 });

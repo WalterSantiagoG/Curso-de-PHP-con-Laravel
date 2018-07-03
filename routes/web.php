@@ -17,3 +17,5 @@ Route::post('/messages/create', 'MessagesController@create')
 ->middleware('auth');//Aseguro que el usuario este logueado
 
 Auth::routes();
+
+Route::get('/{username}','UsersController@show');
