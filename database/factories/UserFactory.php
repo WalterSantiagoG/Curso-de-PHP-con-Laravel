@@ -21,3 +21,14 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+//Objeto Faker = nos va a falicitar la creacion de datos al azar
+//paragraph
+//realText devuelve texto basado en un libro
+//words Dame palabras, true para que lo devuelva como texto, de lo contrario lo devuelve como array
+$factory->define(App\Message::class, function(Faker $faker){
+    return [
+        'content' => $faker->realText(random_int(20, 160)), //realTime recibe como parametro la cantidad de caracteres que quiere que contenga el parrafo, colocamos un numero randon en este caso entre 20 y 160
+        'image'   => $faker->imageUrl(600,338)
+    ];
+});
