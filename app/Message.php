@@ -10,4 +10,9 @@ class Message extends Model
     //Add [content] to fillable property to allow mass assignment on [App\Message].
     //Agregamos esto para indicar que campos vamos a proteger, ej: contraseña, etc, en este caso no vamos a proteger ningun campo
     protected $guarded = [];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
