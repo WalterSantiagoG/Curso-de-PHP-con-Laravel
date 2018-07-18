@@ -61,14 +61,15 @@
                             </div>
                         </div>
                     </form>
+                    <div align="center">
+                        <br>
+                        <a href="/auth/facebook" class="btn btn-primary">
+                            Login con facebook
+                        </a>
+                    </div>    
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <a href="/auth/facebook" class="btn btn-primary">
-        Login con facebook
-    </a>
 </div>
 @endsection
