@@ -13,6 +13,7 @@
 
         @if(Gate::allows('dms', $user))
             <form action="/{{ $user->username }}/dms" method="POST">
+                {{ csrf_field() }}
                 <input type="text" name="message" id="" class="form-control">
                 <button type="submit" class="btn btn-success">
                     Enviar DM
