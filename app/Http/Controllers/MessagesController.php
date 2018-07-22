@@ -50,7 +50,12 @@ class MessagesController extends Controller
     {
         $query = $request->input('query');
 
-        $messages = Message::with('user')->where('content', 'LIKE', "%$query%")->get();
+        //Busqueda con base de datos
+        //$messages = Message::with('user')->where('content', 'LIKE', "%$query%")->get();
+        
+        //Busqueda con motor de base de datos Algolia
+        $messages = Message::search($query)->get();
+        $messages->load('user');
 
         return view('messages.index',[
             'messages' => $messages,
