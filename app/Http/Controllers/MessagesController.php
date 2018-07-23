@@ -61,4 +61,10 @@ class MessagesController extends Controller
             'messages' => $messages,
         ]);
     }
+
+    public function responses(Message $message)
+    {
+        //->responses utilizamos la relacion entre mensajes y sus respuestas, tambien se convierte json
+        return $message->responses;
+    }
 }
