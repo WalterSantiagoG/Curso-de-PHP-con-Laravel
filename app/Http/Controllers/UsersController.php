@@ -99,4 +99,8 @@ class UsersController extends Controller
     {
         return $user = User::where('username', $username)->firstOrFail();        
     }
+
+    public function notifications(Request $request){
+        return $request->user()->notifications;
+    }
 }
